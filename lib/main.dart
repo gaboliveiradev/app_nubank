@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.purple,
         brightness: Brightness.dark,
       ),
-      home: const HomePage(),
+      home: HomePage(),
     );
   }
 }
