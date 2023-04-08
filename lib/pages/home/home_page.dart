@@ -53,7 +53,9 @@ class _HomePageState extends State<HomePage> {
           ),
           Positioned(
             top: _screenHeigth * .65,
-            child: MyDotsApp(),
+            child: MyDotsApp(
+              currentIndex: _currentIndex,
+            ),
           )
         ],
       ),
