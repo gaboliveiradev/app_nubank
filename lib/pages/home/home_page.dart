@@ -1,11 +1,14 @@
-import 'package:app_nubank/pages/home/widgets/card_app.dart';
 import 'package:app_nubank/pages/home/widgets/my_app_bar.dart';
+import 'package:app_nubank/pages/home/widgets/page_view_app.dart';
 import 'package:flutter/material.dart';
 
 // StatelessWidget: Não há alteração dos widgets no decorrer da utilização do app.
 // StatefulWidget: Pode haver mudanças de estados e informações no decorrer do uso do app.
 class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _HomePageState createState() => _HomePageState();
 }
 
@@ -20,8 +23,6 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    double _screnHeigth = MediaQuery.of(context).size.height;
-
     return Scaffold(
       // [800] Deixar a nossa cor um pouco mais escura.
       backgroundColor: Colors.purple[800],
@@ -36,21 +37,8 @@ class _HomePageState extends State<HomePage> {
               });
             },
           ),
-          Positioned(
-            top: _screnHeigth * .20,
-            height: _screnHeigth * .45,
-            left: 0,
-            right: 0,
-            // Como é um PageView e eu add a propriedade "physics: BouncingScrollPhysics()", ele tem esse efeito de carrosel.
-            child: PageView(
-              physics: BouncingScrollPhysics(),
-              children: <Widget>[
-                CardApp(),
-                CardApp(),
-                CardApp(),
-              ],
-            ),
-          ),
+          // ignore: prefer_const_constructors
+          PageViewApp(),
         ],
       ),
     );
