@@ -19,6 +19,8 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    double _screnHeigth = MediaQuery.of(context).size.height;
+
     return Scaffold(
       // [800] Deixar a nossa cor um pouco mais escura.
       backgroundColor: Colors.purple[800],
@@ -29,10 +31,32 @@ class _HomePageState extends State<HomePage> {
             showMenu: _showMenu,
             onTap: () {
               setState(() {
-                // A propriedade _showMenu, irá receber o contrário dela. Ou seja [true = false] | [false = true]
                 _showMenu = !_showMenu;
               });
             },
+          ),
+          Positioned(
+            top: _screnHeigth * .14,
+            height: _screnHeigth * .55,
+            left: 0,
+            right: 0,
+            child: PageView(
+              physics: BouncingScrollPhysics(),
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.all(20),
+                  child: Container(
+                    color: Colors.red,
+                  ),
+                ),
+                Container(
+                  color: Colors.blue,
+                ),
+                Container(
+                  color: Colors.yellow,
+                ),
+              ],
+            ),
           ),
         ],
       ),
