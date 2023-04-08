@@ -14,15 +14,20 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   bool _showMenu = false;
+  // ignore: unused_field
+  int _currentIndex = 0;
 
   @override
   void initState() {
     super.initState();
     _showMenu = false;
+    _currentIndex = 0;
   }
 
   @override
   Widget build(BuildContext context) {
+    double _screenHeigth = MediaQuery.of(context).size.height;
+
     return Scaffold(
       // [800] Deixar a nossa cor um pouco mais escura.
       backgroundColor: Colors.purple[800],
@@ -38,7 +43,14 @@ class _HomePageState extends State<HomePage> {
             },
           ),
           // ignore: prefer_const_constructors
-          PageViewApp(),
+          PageViewApp(
+            top: _screenHeigth * 19,
+            onChanged: (index) {
+              setState(() {
+                _currentIndex = index;
+              });
+            },
+          ),
         ],
       ),
     );
