@@ -1,3 +1,4 @@
+import 'package:app_nubank/pages/home/widgets/card_app.dart';
 import 'package:app_nubank/pages/home/widgets/my_app_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -36,25 +37,17 @@ class _HomePageState extends State<HomePage> {
             },
           ),
           Positioned(
-            top: _screnHeigth * .14,
-            height: _screnHeigth * .55,
+            top: _screnHeigth * .20,
+            height: _screnHeigth * .45,
             left: 0,
             right: 0,
+            // Como é um PageView e eu add a propriedade "physics: BouncingScrollPhysics()", ele tem esse efeito de carrosel.
             child: PageView(
               physics: BouncingScrollPhysics(),
               children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.all(20),
-                  child: Container(
-                    color: Colors.red,
-                  ),
-                ),
-                Container(
-                  color: Colors.blue,
-                ),
-                Container(
-                  color: Colors.yellow,
-                ),
+                CardApp(),
+                CardApp(),
+                CardApp(),
               ],
             ),
           ),

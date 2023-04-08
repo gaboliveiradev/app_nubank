@@ -21,9 +21,9 @@ class MyAppBar extends StatelessWidget {
         GestureDetector(
           onTap: onTap,
           child: Container(
-            color: Colors.red[800],
-            // Responsividade no aplicativo, adaptavel para diferentes tamanho de telas.
-            height: MediaQuery.of(context).size.height * .14,
+            color: Colors.purple[800],
+            // [Altura do AppBar] Responsividade no aplicativo, adaptavel para diferentes tamanho de telas.
+            height: MediaQuery.of(context).size.height * .20,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
