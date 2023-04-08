@@ -1,4 +1,5 @@
 import 'package:app_nubank/pages/home/widgets/my_app_bar.dart';
+import 'package:app_nubank/pages/home/widgets/my_dots_app.dart';
 import 'package:app_nubank/pages/home/widgets/page_view_app.dart';
 import 'package:flutter/material.dart';
 
@@ -42,15 +43,18 @@ class _HomePageState extends State<HomePage> {
               });
             },
           ),
-          // ignore: prefer_const_constructors
           PageViewApp(
-            top: _screenHeigth * 19,
+            top: _screenHeigth * .19,
             onChanged: (index) {
               setState(() {
                 _currentIndex = index;
               });
             },
           ),
+          Positioned(
+            top: _screenHeigth * .65,
+            child: MyDotsApp(),
+          )
         ],
       ),
     );
